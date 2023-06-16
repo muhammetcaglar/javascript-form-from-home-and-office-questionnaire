@@ -12,5 +12,25 @@ form.addEventListener('submit',e=>{
     });
     // console.log(score);
     result.classList.remove('d-none');
-    result.querySelector('span').textContent=`${score}%`;
+    let point=0;
+   const goster= setInterval(() => {
+    result.querySelector('span').textContent=`${point}%`;
+    if(point==score)
+    {
+        clearInterval(goster); //Interval'i kaldırır(goster)
+    }
+    else
+    {
+        point++;
+    }
+    }, 50);
+    
 });
+
+// setTimeout(() => {  //İçindeki kod 1 kere çalışır
+//    console.log('Muhammet'); 
+// }, 2000);
+
+// setInterval(() => { //İçindeki kod sürekli çalışır
+//     setInterval
+// }, 2000);
